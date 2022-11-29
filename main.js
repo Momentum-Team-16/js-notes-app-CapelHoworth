@@ -10,15 +10,17 @@ form.addEventListener("submit", function (event) {
   postFetch();
 });
 //
+//
 // Add To List/DB Function
 function postFetch() {
   fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title: "new task", body: `${text.value}` }),
+    body: JSON.stringify({ title: "new task", body: text.value }),
   }).then((r) => r.json());
   keepList();
 }
+//
 //
 // Create Card Function
 function keepList() {
@@ -40,7 +42,7 @@ function loadObject(objects) {
   listItems.replaceChildren();
   for (let object of objects) {
     let card = document.createElement("div");
-    card.classList.add("card", "s12");
+    card.classList.add("card");
     let name = document.createElement("div");
     name.classList.add("card-title");
     name.innerText = object.body;
@@ -50,8 +52,9 @@ function loadObject(objects) {
     //
     // create delete button on card
     let delBtn = document.createElement("button");
-    delBtn.classList.add("button");
+    delBtn.classList.add("delBtn", "btn-floating", "red");
     card.appendChild(delBtn);
+    delBtn.innerText = "X";
     //
     //
     // delete button event listener

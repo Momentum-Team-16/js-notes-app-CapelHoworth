@@ -6,8 +6,8 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
 }
 
 button {
@@ -19,6 +19,22 @@ button {
 .card {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  width: 95%;
+  /* align-items: center; */
+  justify-content: space-around;
+}
+
+.card-title {
+  width: 90%;
+}
+
+.delBtn {
+  display: flex;
+  align-self: right;
+  font-size: larger;
+}
+
+#inputToDo {
+  width: 95%;
+  padding-left: 0.5cm;
 }

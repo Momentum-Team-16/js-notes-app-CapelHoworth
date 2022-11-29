@@ -1,9 +1,24 @@
 * {
+  max-width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-.body {
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }

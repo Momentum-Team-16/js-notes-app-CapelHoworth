@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <!-- <link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <script src="main.js" defer></script>
     <title>To Do List</title>
   </head>
   <body>
-    <h1>To Do!</h1>
-    <div class="main"></div>
+    <div class="container"></div>
+    <h1>Enter Tasks</h1>
     <form action="" id="form">
-      <input id="inputToDo" type="text" placeholder="Do the thing!" />
-      <button id="submit">Add Item!</button>
+      <div>
+        <input id="inputToDo" type="text" placeholder="Do the thing!" />
+        <button class="btn waves-effect">Add Item!</button>
+      </div>
     </form>
-    <div id="list">
-      <h3 id="listItems">To-Do List</h3>
-    </div>
+    <h3 id="listItems">To-Do List</h3>
+    <div id="list"></div>
   </body>
 </html>

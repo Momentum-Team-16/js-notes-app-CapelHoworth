@@ -2,6 +2,7 @@ const form = document.querySelector("#form");
 const listItems = document.querySelector("#list");
 const url = "http://localhost:3000/notes/";
 let text = document.querySelector("#inputToDo");
+const body = document.querySelector("body");
 
 keepList();
 form.addEventListener("submit", function (event) {
@@ -48,6 +49,27 @@ function loadObject(objects) {
     name.innerText = object.body;
     card.appendChild(name);
     listItems.appendChild(card);
+    //
+    // create edit button
+    let editBtn = document.createElement("button");
+    editBtn.classList.add("editBtn", "btn-floating");
+    card.appendChild(editBtn);
+    editBtn.innerText = "✍️";
+    //
+    // make edit button work
+    editBtn.addEventListener("dblclick", function (event) {
+      name.contentEditable = true;
+      editBtn.addEventListener("click", function (event) {
+        name.contentEditable = false;
+        let newUrl = url + object.id;
+        console.log(name.innerText);
+        fetch(newUrl, {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ body: `${name.innerText}` }),
+        }).then((response) => response.json());
+      });
+    });
     //
     //
     // create delete button on card
